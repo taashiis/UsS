@@ -75,7 +75,46 @@ a.nav_link:active {
   left: -120px;
 }
 .bordbox {
-  border: 1px solid black;
+  /* border-right: 1px solid #004aad; */
   width: 250px;
   height: 100%;
+  background-color: #004aad;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 75px; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  /* padding-top: 20px; */
+}
+.navbar {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.nav-link {
+  color: black;
+  font-size: 20px;
+}
+.bi-box-arrow-right {
+  margin-right: 10px;
+}
+#fixedbutton {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: black;
+}
+.main {
+  margin-top: 20px;
+  margin-left: 305px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+.card-s {
+  text-align: center;
+}
+.passicon {
+  transform: translateY(20%);
+  margin-right: 5px;
 }
