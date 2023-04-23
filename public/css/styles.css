@@ -68,3 +68,14 @@ a.nav_link:active {
 .center {
   text-align: center;
 }
+.binav {
+  color: grey;
+}
+.dropdownm {
+  left: -120px;
+}
+.bordbox {
+  border: 1px solid black;
+  width: 250px;
+  height: 100%;
+}

@@ -27,26 +27,15 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 
-app.get("/patientsignup", function (req, res) {
-  res.render("patientSignup");
-});
-
-app.get("/HospSignup", function (req, res) {
-  res.render("HospSignup");
-});
-
-app.get("/orgSignup", function (req, res) {
-  res.render("orgSignup");
-});
-
 app.get("/forgot", function (req, res) {
   res.render("forgot");
 });
-
-app.get("/contact", function (req, res) {
-  res.render("contact");
+app.get("/dashboard", function (req, res) {
+  res.render("dashboard");
 });
-
+app.get("/verify", function (req, res) {
+  res.render("verify");
+});
 // // All post requests from forms
 
 // app.post("/patientSignup", function (req, res) {
