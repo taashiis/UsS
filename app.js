@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const app = express();
 
 // //Password handler
-// // const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 // //Mongodb user model
 // const patientuser = require("./models/patientuser");
@@ -40,8 +40,9 @@ app.get("/verify", function (req, res) {
 // // All post requests from forms
 
 app.post("/patientSignup",function(req,res){
+
   var signupdata = req.body;
-  res.send(signupdata)
+  // res.send(signupdata)
   let{name,email,pin}=signupdata;
   name = signupdata.name;
   email = signupdata.email;
@@ -80,6 +81,14 @@ app.post("/patientSignup",function(req,res){
         })
       })
   }
+});
+
+app.post("/login", function (req, res) {
+  var loginData = req.body;
+  // res.send(loginData);
+  let{email,pin}=loginData;
+  email = loginData.email;
+  pin = loginData.pin;
 });
 
 // app.post("/patientSignup", function (req, res) {
@@ -242,10 +251,7 @@ app.post("/patientSignup",function(req,res){
 //   res.send(email);
 // });
 
-// app.post("/login", function (req, res) {
-//   var loginData = req.body;
-//   res.send(loginData);
-// });
+
 
 // app.post("/contact", function (req, res) {
 //   var contactData = req.body;
