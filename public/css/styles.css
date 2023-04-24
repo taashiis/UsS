@@ -105,6 +105,7 @@ a.nav_link:active {
   margin-right: 20px;
   margin-bottom: 20px;
   color: black;
+  z-index: 9998 !important;
 }
 .main {
   margin-top: 20px;
@@ -113,4 +114,18 @@ a.nav_link:active {
 }
 .card-s {
   text-align: center;
+}
+.passicon {
+  transform: translateY(20%);
+  margin-right: 5px;
+}
+.card-s {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
+}
+.btn-link {
+  font-size: 24px;
+  color: #004aad;
 }
