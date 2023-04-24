@@ -39,7 +39,7 @@ app.get("/verify", function (req, res) {
 });
 // // All post requests from forms
 
-app.post("/signup",function(req,res){
+app.post("/patientSignup",function(req,res){
   var signupdata = req.body;
   res.send(signupdata)
   let{name,email,pin}=signupdata;
