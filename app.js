@@ -9,6 +9,7 @@ const app = express();
 
 // //Mongodb user model
 // const patientuser = require("./models/patientuser");
+const signupuser = require("./models/signupuser");
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -37,6 +38,49 @@ app.get("/verify", function (req, res) {
   res.render("verify");
 });
 // // All post requests from forms
+
+app.post("/signup",function(req,res){
+  var signupdata = req.body;
+  res.send(signupdata)
+  let{name,email,pin}=signupdata;
+  name = signupdata.name;
+  email = signupdata.email;
+  pin = signupdata.pin;
+  // Error Handling would be done at a later Stage
+  // print("reached here");
+
+  if(name==""||email==""||pin==""){
+    res.json({
+        status:"FAILED",
+        message:"Empty input fields!"
+    })
+  }
+  else{
+    const saltRounds = 10;
+
+    bcrypt.hash(pin,saltRounds).then(hashedpasswd=>{
+    const newsignupuser = new signupuser({name,email,pin:hashedpasswd});
+    newsignupuser.save().then(result=>{
+        res.json({
+        status:"Success",
+        message:"Signup success",
+        data:result,
+        })
+      })
+      .catch(err=>{
+        res.json({
+        status:"Failed",
+        message:"Error occured while signing up!"
+        })                  
+      })
+      }).catch(err=>{
+        res.json({
+        status:"FAILED",
+        message:"Error occured while hashing passwd!"
+        })
+      })
+  }
+});
 
 // app.post("/patientSignup", function (req, res) {
 //   var patientData = req.body;
