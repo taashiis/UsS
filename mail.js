@@ -3,8 +3,9 @@ const nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-    user: 'fcscourse13@gmail.com',
-    pass: 'lvlfttvlnrlqzrhh'
+    user: 'incogsafe21@gmail.com',
+    pass: 'ucluamksbhyoqwok'
+    // '1kqg3adone@'
     }
 });
 
@@ -12,17 +13,18 @@ var transporter = nodemailer.createTransport({
 exports.sendMail = function (reciever, message) {
 
     var mailOptions = {
-        from: 'fcscourse13@gmail.com',
+        from: 'incogsafe21@gmail.com',
         to: "" + reciever,
-        subject: 'OTP for your account ',
-        text: "" + message
+        subject: 'OTP for your account from IncogSafe',
+        text: "This OTP is Only Valid for 2 minutes: " + message
     };
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
             console.log(error);
         } else {
-            console.log('Email sent');
+            console.log('Email sent'+info.response);
+            setTimeout(() => {console.log('OTP expired: ' + message);}, 120000); // 2 minutes
         }
     });
 }

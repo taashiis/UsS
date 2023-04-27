@@ -108,7 +108,7 @@ a.nav_link:active {
   z-index: 9998 !important;
 }
 .main {
-  margin-top: 20px;
+  margin-top: 80px;
   margin-left: 305px; /* Same as the width of the sidenav */
   padding: 0px 10px;
 }
@@ -128,4 +128,56 @@ a.nav_link:active {
 .btn-link {
   font-size: 24px;
   color: #004aad;
+}
+.inputfield {
+  margin-left: 10px;
+}
+.passwordone {
+  margin-top: 10px;
+}
+.passwordtwo {
+  margin-top: 5px;
+}
+.navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 5000 !important;
+}
+a.linkss:hover {
+  text-decoration: none;
+  color: white;
+}
+.btn-danger {
+  margin-top: 10px;
+}
+.btn-info {
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 5px;
+}
+.timg {
+  float: right;
+  /* border: 1px solid black; */
+  height: 600px;
+  width: 850px;
+}
+.maincol {
+  text-align: center;
+  width: 100%;
+  /* border: 1px solid black; */
+  margin-top: 90px;
+  margin-left: 100px;
+  display: inline;
+}
+.entry {
+  margin-top: 500px;
+  color: #004aad;
+  /* display: inline; */
+}
+.welcometag {
+  text-align: center;
+  font-size: 40px;
+  /* border: 1px solid black; */
+  margin-top: 250px;
+  padding: 0 100px 0 100px;
 }

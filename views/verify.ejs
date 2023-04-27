@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<!-- <%- include('partials/header') -%> -->
 <div class="box">
   <form
     method="POST"
@@ -6,6 +6,7 @@
     class="my-login-validation"
     novalidate=""
   >
+    <input type="hidden" value="<%= csrfToken %>" name="_csrf">
     <div class="form-outline mb-4">
       <div class="buttonnn">
         <svg
@@ -26,16 +27,13 @@
       <div class="heading">
         <h2 classname="heading">Verify OTP</h2>
       </div>
-      <input type="email" id="form2Example1" class="form-control" name="otp" />
+      <input type="text" id="form2Example1" class="form-control" name="otp" maxlength="6" onpaste="return false;" oncopy="return false;" />
       <label class="form-label" for="form2Example1">
         Enter OTP received on Email address
       </label>
     </div>
     <div class="buttonnn">
-      <button type="button" class="btn btn-primary">Verify</button>
-    </div>
-    <div class="text-center">
-      <p>Didn't receive an OTP? <a href="#!">Resend</a></p>
+      <button type="submit" class="btn btn-primary">Verify</button>
     </div>
   </form>
 </div>

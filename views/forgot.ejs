@@ -1,9 +1,10 @@
-<%- include('partials/header') -%> 
+<!-- <%- include('partials/header') -%>  -->
 <div class="box">
 	<form method="POST"
     action="/forgot"
     class="my-login-validation"
     novalidate="">
+	<input type="hidden" value="<%= csrfToken %>" name="_csrf">
 	  <div class="form-outline mb-4">
 		  <h2>Forgot Password</h2>
 		  <br>
@@ -11,7 +12,7 @@
 		  type="email"
 		  id="form2Example1"
 		  class="form-control"
-		  name="username"
+		  name="email"
 		/>
 		<label class="form-label" for="form2Example1"> Email address </label>
 	  </div>

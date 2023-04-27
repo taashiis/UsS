@@ -1,11 +1,12 @@
-<%- include('partials/header') -%>
+<!-- <%- include('partials/header') -%> -->
 <div class="box">
   <form
     method="POST"
-    action="/patientSignup"
+    action="/signup"
     class="my-login-validation"
     novalidate=""
   >
+  <input type="hidden" value="<%= csrfToken %>" name="_csrf">
     <div class="form-outline mb-4">
       <div class="buttonnn">
         <svg
@@ -48,24 +49,24 @@
       <div class="form-outline mb-4">
         <input
           name="pin"
-          type="text"
+          type="password"
           class="pincode form-control"
-          inputmode="numeric"
-          maxlength="6"
+          inputmode="text"
+          maxlength="12"
           id="form2Example2"
         />
-        <label class="form-label" for="form2Example2"> Enter Pincode </label>
+        <label class="form-label" for="form2Example2"> Enter Password </label>
       </div>
       <div class="form-outline mb-4">
         <input
           name="pinconfirm"
-          type="text"
+          type="password"
           class="pincode form-control"
-          inputmode="numeric"
-          maxlength="6"
+          inputmode="text"
+          maxlength="12"
           id="form2Example2"
         />
-        <label class="form-label" for="form2Example2"> Confirm Pincode </label>
+        <label class="form-label" for="form2Example2"> Confirm Password </label>
       </div>
       <div class="buttonnn">
         <button type="submit" class="btn btn-primary">
@@ -78,7 +79,7 @@
         <p>
           Already a member?
           <!-- <Link to={"/login"}> -->
-          <a href="#">Login</a>
+          <a href="/login">Login</a>
           <!-- </Link> -->
         </p>
       </div>
